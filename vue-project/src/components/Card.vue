@@ -25,15 +25,18 @@
 </template>
 
 <script setup>
-defineProps({
+ defineProps({
+    id:Number,
     imageUrl:String,
     title:String,
     price:Number,
     isFavorite:Boolean,
     isAdded:Boolean,
-    onCLickAdd:Function,
-    onCLickFavorite:Function
+    onCLickFavorite:Function,
+    onCLickAdd:Function
 })
+
+
 </script>
 
 <style>
