@@ -10,9 +10,9 @@
   
         <div>
           <ul class="flex items-center gap-10">
-            <li class="flex items-center gap-4 cursor-pointer text-gray-500 transition hover:text-black">
+            <li @click="emit('openDrawer')" class="flex items-center gap-4 cursor-pointer text-gray-500 transition hover:text-black">
               <img src="/cart.svg" alt="Cart">
-              <b>1205 руб.</b>
+              <b>{{ totalPrice }} ₽</b>
             </li>
             <li class="flex items-center gap-4 cursor-pointer text-gray-500 transition hover:text-black">
               <img src="/heart.svg" alt="Heart">
@@ -24,14 +24,16 @@
             </li>
           </ul>
         </div>
-      
     </header>
 </template>
 
-<script>
-export default {
+<script setup>
+// import {inject} from 'vue';
+defineProps({
+  totalPrice:Number
+})
+const emit = defineEmits(['openDrawer']);
 
-}
 </script>
 
 <style>
