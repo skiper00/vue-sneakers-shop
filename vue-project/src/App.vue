@@ -2,7 +2,7 @@
   <div>
     <Drawer
       v-if="drawerOpen"
-      :total-price="totalPice"
+      :total-price="totalPrice"
       :vat-price="vatPrice"
       @create-order="createOrder"
       :button-disabled="cartButtonDisabled"
