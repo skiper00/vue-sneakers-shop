@@ -13,8 +13,10 @@
 
 <script setup>
 import { ref, inject } from 'vue';
+import {useRouter} from 'vue-router'
 
 const useData = inject('useData')
+const router = useRouter();
 const name = ref('');
 const email = ref('');
 
@@ -23,6 +25,7 @@ const saveUser = () => {
     useData.email = email.value
     name.value = '';
     email.value = '';
+    router.push('/');
 }
 
 
