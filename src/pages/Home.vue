@@ -4,6 +4,7 @@ import axios from 'axios'
 import debounce from 'lodash.debounce'
 import { inject } from 'vue'
 import CardList from '../components/CardList.vue'
+import Footer from '../components/Footer.vue'
 
 const { cart, addToCart, removeFromCart } = inject('cart')
 
@@ -97,7 +98,7 @@ const fetchItems = async () => {
     }))
   } catch (err) {
     console.log(err)
-  }
+  } 
 }
 
 onMounted(async () => {
@@ -148,5 +149,8 @@ watch(filters, fetchItems)
 
   <div class="mt-10">
     <CardList :items="items" @add-to-favorite="addToFavorite" @add-to-cart="onClickAddPlus" />
+  </div>
+  <div>
+    <Footer />
   </div>
 </template>

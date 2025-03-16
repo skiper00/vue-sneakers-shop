@@ -20,7 +20,13 @@ onMounted(async () => {
 </script>
 
 <template>
+ 
+<div v-if="favorites.length > 0">
   <h2 class="text-3xl font-bold mb-8">Мои закладки</h2>
-
   <CardList :items="favorites" is-favorites />
+</div>
+<div v-else>
+<p class="font-bold text-green-500 flex justify-center text-xl">У вас пока нет закладок</p>
+</div>
+
 </template>
